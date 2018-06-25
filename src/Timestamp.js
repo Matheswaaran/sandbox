@@ -1,5 +1,5 @@
-function date(timestamp) {
-  var months = [
+const date = timestamp => {
+  const months = [
     "Jan",
     "Feb",
     "Mar",
@@ -16,14 +16,14 @@ function date(timestamp) {
   return `${timestamp.getDate()} ${
     months[timestamp.getMonth()]
   } ${timestamp.getFullYear()}`;
-}
+};
 
-function time(timestamp) {
+const time = timestamp => {
   return `${timestamp.getHours()}:${timestamp.getMinutes()}:${timestamp.getSeconds()}`;
-}
+};
 
-function day(timestamp) {
-  var days = [
+const day = timestamp => {
+  const days = [
     "Sunday",
     "Monday",
     "Tuesday",
@@ -33,11 +33,11 @@ function day(timestamp) {
     "Saturday"
   ];
   return days[timestamp.getDay()];
-}
+};
 
-function dateTime(timestamp) {
+const dateTime = timestamp => {
   return timestamp;
-}
+};
 
 export default dateTime;
 export { date, time, day };
