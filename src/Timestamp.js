@@ -19,7 +19,13 @@ const date = timestamp => {
 };
 
 const time = timestamp => {
-  return `${timestamp.getHours()}:${timestamp.getMinutes()}:${timestamp.getSeconds()}`;
+  let hours = timestamp.getHours();
+  let str = "AM";
+  if (hours > 12) {
+    hours -= 12;
+    str = "PM";
+  }
+  return `${hours}:${timestamp.getMinutes()}:${timestamp.getSeconds()} ${str}`;
 };
 
 const day = timestamp => {
