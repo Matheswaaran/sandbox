@@ -1,6 +1,21 @@
 function date(timestamp) {
-  return `${timestamp.getDate()}/${timestamp.getMonth() +
-    1}/${timestamp.getFullYear()}`;
+  var months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
+  ];
+  return `${timestamp.getDate()} ${
+    months[timestamp.getMonth()]
+  } ${timestamp.getFullYear()}`;
 }
 
 function time(timestamp) {
