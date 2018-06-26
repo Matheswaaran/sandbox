@@ -45,5 +45,11 @@ const dateTime = timestamp => {
   return timestamp;
 };
 
+const timeAgo = timestamp => {
+  console.log(timestamp);
+  let ago = Math.floor(new Date() / 1000) - timestamp / 1000;
+  return `${Math.floor(ago / 60)} Mins and ${ago % 60} seconds`;
+};
+
 export default dateTime;
-export { date, time, day };
+export { date, time, day, timeAgo };
