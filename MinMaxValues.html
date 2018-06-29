@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>MinMaxVal</title>
+  <script type="text/javascript">
+  let obj;
+  let arr = [];
+    fetch(new Request('https://api.myjson.com/bins/erh9a'))
+        .then((res) => res.json())
+        .then(data => {
+          obj = data.questions.find(x => x.web_name == 'bp');
+          maxVal = obj['max-value'].split("/");
+          minVal = obj['min-value'].split("/");
+          let obj1 = Object.assign({},obj);
+          arr.push(obj,obj1);
+          arr.forEach((x,i) => x.value = minVal[i]+"-"+maxVal[i]);
+          console.log(arr);
+        });
+  </script>
+  </head>
+  <body>
+  </body>
+</html>
