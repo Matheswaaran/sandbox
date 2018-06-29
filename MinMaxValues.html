@@ -11,8 +11,7 @@
           obj = data.questions.find(x => x.web_name == 'bp');
           maxVal = obj['max-value'].split("/");
           minVal = obj['min-value'].split("/");
-          let obj1 = Object.assign({},obj);
-          arr.push(obj,obj1);
+          arr.push(obj,Object.assign({},obj));
           arr.forEach((x,i) => x.value = minVal[i]+"-"+maxVal[i]);
           console.log(arr);
         });
