@@ -12,7 +12,10 @@
           maxVal = obj['max-value'].split("/");
           minVal = obj['min-value'].split("/");
           arr.push(obj,Object.assign({},obj));
-          arr.forEach((x,i) => x.value = minVal[i]+"-"+maxVal[i]);
+          arr.forEach((x,i) => {
+            x['min-value'] = minVal[i];
+            x['max-value'] = maxVal[i];
+          });
           console.log(arr);
         });
   </script>
